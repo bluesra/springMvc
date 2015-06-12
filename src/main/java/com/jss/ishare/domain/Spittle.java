@@ -1,17 +1,30 @@
-package com.jss.ishare;
+package com.jss.ishare.domain;
 
+import javax.persistence.*;
 import java.util.Date;
 
 //import org.apache.commons.lang3.builder.EqualsBuilder;
 //import org.apache.commons.lang3.builder.HashCodeBuilder;
-
+@Entity
 public class Spittle {
 
+  @Id
+  @GeneratedValue(strategy= GenerationType.AUTO)
   private final Long id;
+
+  @Column
   private final String message;
-  private final Date time;
-  private Double latitude;
-  private Double longitude;
+
+  @Column
+  private Date postedTime;
+
+  @ManyToOne
+  @JoinColumn(name="spitter")
+  private Spitter spitter;
+//
+//  private final Date time;
+//  private Double latitude;
+//  private Double longitude;
 
   public Spittle(String message, Date time) {
     this(null, message, time, null, null);
@@ -20,9 +33,9 @@ public class Spittle {
   public Spittle(Long id, String message, Date time, Double longitude, Double latitude) {
     this.id = id;
     this.message = message;
-    this.time = time;
-    this.longitude = longitude;
-    this.latitude = latitude;
+//    this.time = time;
+//    this.longitude = longitude;
+//    this.latitude = latitude;
   }
 
   public long getId() {
@@ -33,17 +46,7 @@ public class Spittle {
     return message;
   }
 
-  public Date getTime() {
-    return time;
-  }
-  
-  public Double getLongitude() {
-    return longitude;
-  }
-  
-  public Double getLatitude() {
-    return latitude;
-  }
+
   
 //  @Override
 //  public boolean equals(Object that) {
@@ -54,5 +57,20 @@ public class Spittle {
 //  public int hashCode() {
 //    return HashCodeBuilder.reflectionHashCode(this, "id", "time");
 //  }
-  
+
+  public Date getPostedTime() {
+    return postedTime;
+  }
+
+  public void setPostedTime(Date postedTime) {
+    this.postedTime = postedTime;
+  }
+
+  public Spitter getSpitter() {
+    return spitter;
+  }
+
+  public void setSpitter(Spitter spitter) {
+    this.spitter = spitter;
+  }
 }

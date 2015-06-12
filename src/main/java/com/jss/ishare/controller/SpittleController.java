@@ -1,6 +1,6 @@
 package com.jss.ishare.controller;
 
-import com.jss.ishare.Spittle;
+import com.jss.ishare.domain.Spittle;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,5 +1,6 @@
-package com.jss.ishare;
+package com.jss.ishare.domain;
 
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -7,18 +8,35 @@ import javax.validation.constraints.Size;
 //import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.hibernate.validator.constraints.Email;
 
+import java.util.List;
+
 public class Spitter {
 
+  @Id
+  @GeneratedValue(strategy= GenerationType.IDENTITY)
   private Long id;
-  
-  @NotNull
-  @Size(min=5, max=16, message="{username.size}")
+
+  @Column(name="username")
   private String username;
 
-  @NotNull
-  @Size(min=5, max=25, message="{password.size}")
+  @Column(name="password")
   private String password;
-  
+
+  @Column(name="fullname")
+  private String fullName;
+
+  @Column(name="email")
+  private String email;
+
+  @Column(name="updateByEmail")
+  private boolean updateByEmail;
+
+  @Column(name="status")
+  private String status;
+
+  @OneToMany(targetEntity=Spittle.class, fetch= FetchType.EAGER, mappedBy="spitter")
+  private List<Spittle> spittles;
+
   @NotNull
   @Size(min=2, max=30, message="{firstName.size}")
   private String firstName;
@@ -26,10 +44,6 @@ public class Spitter {
   @NotNull
   @Size(min=2, max=30, message="{lastName.size}")
   private String lastName;
-  
-  @NotNull
-  @Email
-  private String email;
 
   public Spitter() {}
   
@@ -104,15 +118,51 @@ public class Spitter {
 //  }
 
 
-  @Override
-  public String toString() {
-    return "Spitter{" +
-            "id=" + id +
-            ", username='" + username + '\'' +
-            ", password='" + password + '\'' +
-            ", firstName='" + firstName + '\'' +
-            ", lastName='" + lastName + '\'' +
-            ", email='" + email + '\'' +
-            '}';
-  }
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public boolean isUpdateByEmail() {
+        return updateByEmail;
+    }
+
+    public void setUpdateByEmail(boolean updateByEmail) {
+        this.updateByEmail = updateByEmail;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public List<Spittle> getSpittles() {
+        return spittles;
+    }
+
+    public void setSpittles(List<Spittle> spittles) {
+        this.spittles = spittles;
+    }
+
+    @Override
+    public String toString() {
+        return "Spitter{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", email='" + email + '\'' +
+                ", updateByEmail=" + updateByEmail +
+                ", status='" + status + '\'' +
+                ", spittles=" + spittles +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    }
 }
