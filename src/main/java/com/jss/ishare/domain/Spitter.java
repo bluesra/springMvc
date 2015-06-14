@@ -10,10 +10,11 @@ import org.hibernate.validator.constraints.Email;
 
 import java.util.List;
 
+@Entity
 public class Spitter {
 
   @Id
-  @GeneratedValue(strategy= GenerationType.IDENTITY)
+  @GeneratedValue(strategy= GenerationType.AUTO)
   private Long id;
 
   @Column(name="username")
@@ -22,7 +23,7 @@ public class Spitter {
   @Column(name="password")
   private String password;
 
-  @Column(name="fullname")
+  @Column
   private String fullName;
 
   @Column(name="email")
@@ -39,10 +40,12 @@ public class Spitter {
 
   @NotNull
   @Size(min=2, max=30, message="{firstName.size}")
+  @Transient
   private String firstName;
 
   @NotNull
   @Size(min=2, max=30, message="{lastName.size}")
+  @Transient
   private String lastName;
 
   public Spitter() {}
@@ -60,63 +63,29 @@ public class Spitter {
     this.email = email;
   }
 
-  public String getUsername() {
-    return username;
-  }
+    public Long getId() {
+        return id;
+    }
 
-  public void setUsername(String username) {
-    this.username = username;
-  }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-  public String getPassword() {
-    return password;
-  }
+    public String getUsername() {
+        return username;
+    }
 
-  public void setPassword(String password) {
-    this.password = password;
-  }
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-  public Long getId() {
-    return id;
-  }
+    public String getPassword() {
+        return password;
+    }
 
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  public String getFirstName() {
-    return firstName;
-  }
-
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
-
-  public String getLastName() {
-    return lastName;
-  }
-
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
-  
-  public String getEmail() {
-    return email;
-  }
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
-//  @Override
-//  public boolean equals(Object that) {
-//    return EqualsBuilder.reflectionEquals(this, that, "firstName", "lastName", "username", "password", "email");
-//  }
-//
-//  @Override
-//  public int hashCode() {
-//    return HashCodeBuilder.reflectionHashCode(this, "firstName", "lastName", "username", "password", "email");
-//  }
-
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getFullName() {
         return fullName;
@@ -124,6 +93,14 @@ public class Spitter {
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public boolean isUpdateByEmail() {
@@ -148,6 +125,22 @@ public class Spitter {
 
     public void setSpittles(List<Spittle> spittles) {
         this.spittles = spittles;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     @Override

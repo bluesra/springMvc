@@ -57,7 +57,7 @@ public class IShareDataConfig {
         emf.setDataSource(dataSource());
 //        emf.setPersistenceUnitName("spitter");
         emf.setJpaVendorAdapter(jpaVendorAdapter());
-        emf.setPackagesToScan("com.jss.ishare.db.domain");
+        emf.setPackagesToScan("com.jss.ishare.domain");
         return emf;
     }
 

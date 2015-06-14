@@ -1,7 +1,13 @@
 DROP database if exists isharedb;
 CREATE DATABASE isharedb;
 
-GRANT all privileges on isharedb.* to 'ais'@'%' identified by 'ais0078';
+CREATE USER 'ais'@'localhost' IDENTIFIED BY 'ais0078';
+CREATE USER 'ais'@'%' IDENTIFIED BY 'ais0078';
+GRANT all privileges on isharedb.* to 'ais'@'%';
+GRANT all privileges on isharedb.* to 'ais'@'localhost';
+
+
+flush privileges;
 
 #CREATE USER 'jeffrey'@'localhost' IDENTIFIED BY 'mypass';
 #GRANT all privileges on isharedb.* to 'jeffrey'@'%' identified by 'ais0078';
@@ -28,5 +34,4 @@ create table spittle (
 
 );
 
-insert into spitter(username, password, fullName, email, updateByEmail, status)
-VALUES ('jack', '123', 'jack yang', 'blu@w2.com', 'jf@bl.d','ok');
+insert into spitter(username, password, fullName, email, updateByEmail, status) VALUES ('jack', '123', 'jack yang', 'blu@w2.com', FALSE ,'ok');
