@@ -47,7 +47,7 @@ public class IShareDataConfig {
         adapter.setDatabase(Database.MYSQL);
 //        adapter.setDatabasePlatform("org.hibernate.dialect.MySQL5Dialect");
         adapter.setShowSql(true);
-        adapter.setGenerateDdl(true);
+        adapter.setGenerateDdl(false);
         return adapter;
     }
 //    EntityManagerFactory
