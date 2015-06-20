@@ -1,2 +1,14 @@
 .idea
 *target**
+src/main/webapp/WEB-INF/views/.DS_Store
+src/main/webapp/WEB-INF/views/metronic313/.DS_Store
+src/main/webapp/WEB-INF/views/metronic313/assets/.DS_Store
+src/main/webapp/WEB-INF/views/metronic313/assets/admin/.DS_Store
+src/main/webapp/WEB-INF/views/metronic313/assets/admin/layout/.DS_Store
+src/main/webapp/WEB-INF/views/metronic313/assets/admin/pages/.DS_Store
+src/main/webapp/WEB-INF/views/metronic313/assets/admin/pages/media/.DS_Store
+src/main/webapp/WEB-INF/views/metronic313/assets/global/.DS_Store
+src/main/webapp/WEB-INF/views/metronic313/assets/global/plugins/.DS_Store
+src/main/webapp/WEB-INF/views/metronic313/assets/global/plugins/bootstrap-switch/.DS_Store
+src/main/webapp/WEB-INF/views/metronic313/templates/.DS_Store
+src/main/webapp/WEB-INF/views/metronic313/templates/admin/.DS_Store
