@@ -12,7 +12,7 @@ public class HomeController {
 
   @RequestMapping(value = "/", method = {GET, HEAD})
   public String home(Model model) {
-   return "home";
+   return "components";
   }
 
 }
