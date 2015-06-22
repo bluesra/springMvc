@@ -12,6 +12,7 @@ import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 import javax.sql.DataSource;
+import java.util.Properties;
 
 
 /**
@@ -57,6 +58,9 @@ public class IShareDataConfig {
         emf.setDataSource(dataSource());
 //        emf.setPersistenceUnitName("spitter");
         emf.setJpaVendorAdapter(jpaVendorAdapter());
+        Properties properties = new Properties();
+        properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+        emf.setJpaProperties(properties);
         emf.setPackagesToScan("com.jss.ishare.domain");
         return emf;
     }
