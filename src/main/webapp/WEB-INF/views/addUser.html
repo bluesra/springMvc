@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 3.1.3
+Author: KeenThemes
+Website: http://www.xiujie.cn/
+Contact: support@xiujie.cn
+Follow: www.twitter.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+<meta charset="utf-8"/>
+<title>Add User</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<!--<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>-->
+<link href="../../resources/assets/global/plugins/font-awesome/css/font-awesome.min.css" th:href="@{/resources/assets/global/plugins/font-awesome/css/font-awesome.min.css}" rel="stylesheet" type="text/css"/>
+<link href="../../resources/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" th:href="@{/resources/assets/global/plugins/simple-line-icons/simple-line-icons.min.css}" rel="stylesheet" type="text/css"/>
+<link href="../../resources/assets/global/plugins/bootstrap/css/bootstrap.min.css" th:href="@{/resources/assets/global/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+<link href="../../resources/assets/global/plugins/uniform/css/uniform.default.css" th:href="@{/resources/assets/global/plugins/uniform/css/uniform.default.css}" rel="stylesheet" type="text/css"/>
+<link href="../../resources/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" th:href="@{/resources/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css}" rel="stylesheet" type="text/css"/>
+<!-- END GLOBAL MANDATORY STYLES -->
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link rel="stylesheet" type="text/css" href="../../resources/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css" th:href="@{/resources/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css}"/>
+<link rel="stylesheet" type="text/css" href="../../resources/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" th:href="@{/resources/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css}"/>
+<link rel="stylesheet" type="text/css" href="../../resources/assets/global/plugins/jquery-tags-input/jquery.tagsinput.css" th:href="@{/resources/assets/global/plugins/jquery-tags-input/jquery.tagsinput.css}"/>
+<link rel="stylesheet" type="text/css" href="../../resources/assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css" th:href="@{/resources/assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css}"/>
+<link rel="stylesheet" type="text/css" href="../../resources/assets/global/plugins/typeahead/typeahead.css" th:href="@{/resources/assets/global/plugins/typeahead/typeahead.css}"/>
+<!-- END PAGE LEVEL STYLES -->
+<!-- BEGIN THEME STYLES -->
+<link href="../../resources/assets/global/css/components.css" rel="stylesheet" th:href="@{/resources/assets/global/css/components.css}" type="text/css"/>
+<link href="../../resources/assets/global/css/plugins.css" rel="stylesheet" th:href="@{/resources/assets/global/css/plugins.css}" type="text/css"/>
+<link href="../../resources/assets/admin/layout/css/layout.css" rel="stylesheet" th:href="@{/resources/assets/admin/layout/css/layout.css}" type="text/css"/>
+<link id="style_color" href="../../resources/assets/admin/layout/css/themes/default.css" rel="stylesheet" th:href="@{/resources/assets/admin/layout/css/themes/default.css}" type="text/css"/>
+<link href="../../resources/assets/admin/layout/css/custom.css" rel="stylesheet" th:href="@{/resources/assets/admin/layout/css/custom.css}" type="text/css"/>
+<!-- END THEME STYLES -->
+<link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<!-- DOC: Apply "page-header-fixed-mobile" and "page-footer-fixed-mobile" class to body element to force fixed header or footer in mobile devices -->
+<!-- DOC: Apply "page-sidebar-closed" class to the body and "page-sidebar-menu-closed" class to the sidebar menu element to hide the sidebar by default -->
+<!-- DOC: Apply "page-sidebar-hide" class to the body to make the sidebar completely hidden on toggle -->
+<!-- DOC: Apply "page-sidebar-closed-hide-logo" class to the body element to make the logo hidden on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-hide" class to body element to completely hide the sidebar on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-fixed" class to have fixed sidebar -->
+<!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
+<!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
+<!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
+<body class="page-header-fixed page-quick-sidebar-over-content ">
+<!-- BEGIN HEADER -->
+<div class="page-header navbar navbar-fixed-top">
+	<!-- BEGIN HEADER INNER -->
+	<div class="page-header-inner">
+		<!-- BEGIN LOGO -->
+		<div class="page-logo">
+			<a href="index.html">
+			<img src="../../resources/assets/admin/layout/img/logo.png" th:src="@{/resources/assets/admin/layout/img/logo.png}" alt="logo" class="logo-default"/>
+			</a>
+			<div class="menu-toggler sidebar-toggler hide">
+				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+			</div>
+		</div>
+		<!-- END LOGO -->
+		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+		<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+		</a>
+		<!-- END RESPONSIVE MENU TOGGLER -->
+
+	</div>
+	<!-- END HEADER INNER -->
+</div>
+<!-- END HEADER -->
+<div class="clearfix">
+</div>
+<!-- BEGIN CONTAINER -->
+<div class="page-container">
+
+	<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper">
+		<div layout:fragment="content" class="page-content">
+
+			<!-- BEGIN PAGE HEADER-->
+			<h3 class="page-title">
+			添加用户 <small>添加代理商、添加店主</small>
+			</h3>
+			<div class="page-bar">
+				<ul class="page-breadcrumb">
+					<li>
+						<i class="fa fa-home"></i>
+						<a href="index.html">首页</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="#">添加用户</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="#">用户</a>
+					</li>
+				</ul>
+				<div class="page-toolbar">
+					<div class="btn-group pull-right">
+						<button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+						要吗再议 <i class="fa fa-angle-down"></i>
+						</button>
+						<ul class="dropdown-menu pull-right" role="menu">
+							<li>
+								<a href="#">Action</a>
+							</li>
+							<li>
+								<a href="#">Another action</a>
+							</li>
+							<li>
+								<a href="#">Something else here</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a href="#">Separated link</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- END PAGE HEADER-->
+			<!-- BEGIN PAGE CONTENT-->
+			<div class="row">
+				<div class="col-md-12">
+					<!-- BEGIN PORTLET-->
+					<div class="portlet box yellow-crusta">
+						<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-gift"></i>新用户信息
+							</div>
+							<div class="tools">
+								<a href="javascript:;" class="collapse">
+								</a>
+								<a href="#portlet-config" data-toggle="modal" class="config">
+								</a>
+								<a href="javascript:;" class="reload">
+								</a>
+								<a href="javascript:;" class="remove">
+								</a>
+							</div>
+						</div>
+						<div class="portlet-body form">
+							<form action="#" id="form-username" class="form-horizontal form-bordered">
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Basic Auto Complete</label>
+									<div class="col-sm-4">
+										<div class="input-group">
+											<span class="input-group-addon">
+											<i class="fa fa-user"></i>
+											</span>
+											<input type="text" id="typeahead_example_1" name="typeahead_example_1" class="form-control"/>
+										</div>
+										<p class="help-block">
+											 E.g: metronic, keenthemes.<br/>
+											<span class="label label-success label-sm">
+											Learn more: </span>
+											<a target="_blank" href="http://twitter.github.io/typeahead.js/">
+											http://twitter.github.io/typeahead.js/ </a>
+										</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Country Auto Complete</label>
+									<div class="col-sm-4">
+										<div class="input-group">
+											<span class="input-group-addon">
+											<i class="fa fa-search"></i>
+											</span>
+											<input type="text" id="typeahead_example_2" name="typeahead_example_2" class="form-control"/>
+										</div>
+										<p class="help-block">
+											 E.g: USA, Malaysia. Prefetch from JSON source
+										</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Custom Template</label>
+									<div class="col-sm-4">
+										<div class="input-group">
+											<span class="input-group-addon">
+											<i class="fa fa-cogs"></i>
+											</span>
+											<input type="text" id="typeahead_example_3" name="typeahead_example_3" class="form-control"/>
+										</div>
+										<p class="help-block">
+											 Uses a precompiled template to customize look of suggestion.
+										</p>
+									</div>
+								</div>
+								<div class="form-group ">
+									<label class="col-sm-3 control-label">Multiple Sections with Headers</label>
+									<div class="col-sm-4">
+										<div class="input-group">
+											<span class="input-group-addon">
+											<i class="fa fa-check"></i>
+											</span>
+											<input type="text" id="typeahead_example_4" name="typeahead_example_4" class="form-control"/>
+										</div>
+										<p class="help-block">
+											 Two datasets that are prefetched, stored, and searched on the client. Highlighting is enabled.
+										</p>
+									</div>
+								</div>
+								<div class="form-group last">
+									<label class="control-label col-md-3">Modal</label>
+									<div class="col-md-4">
+										<a href="#myModal_autocomplete" role="button" class="btn red" data-toggle="modal">
+										View in Modal </a>
+									</div>
+								</div>
+								<div class="form-actions">
+									<div class="row">
+										<div class="col-md-offset-3 col-md-9">
+											<button type="submit" class="btn purple"><i class="fa fa-check"></i> Submit</button>
+											<button type="button" class="btn default">Cancel</button>
+										</div>
+									</div>
+								</div>
+							</form>
+							<div id="myModal_autocomplete" class="modal fade" role="dialog" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+											<h4 class="modal-title">Radio Switch in Modal</h4>
+										</div>
+										<div class="modal-body form">
+											<form action="#" class="form-horizontal form-row-seperated">
+												<div class="form-group">
+													<label class="col-sm-4 control-label">Basic Auto Complete</label>
+													<div class="col-sm-8">
+														<div class="input-group">
+															<span class="input-group-addon">
+															<i class="fa fa-user"></i>
+															</span>
+															<input type="text" id="typeahead_example_modal_1" name="typeahead_example_modal_1" class="form-control"/>
+														</div>
+														<p class="help-block">
+															 E.g: metronic, keenthemes.<br/>
+															<span class="label label-success label-sm">
+															Learn more: </span>
+															<a target="_blank" href="http://twitter.github.io/typeahead.js/">
+															http://twitter.github.io/typeahead.js/ </a>
+														</p>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-4 control-label">Country Auto Complete</label>
+													<div class="col-sm-8">
+														<div class="input-group">
+															<span class="input-group-addon">
+															<i class="fa fa-search"></i>
+															</span>
+															<input type="text" id="typeahead_example_modal_2" name="typeahead_example_modal_2" class="form-control"/>
+														</div>
+														<p class="help-block">
+															 E.g: USA, Malaysia. Prefetch from JSON source
+														</p>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-4 control-label">Custom Template</label>
+													<div class="col-sm-8">
+														<div class="input-group">
+															<span class="input-group-addon">
+															<i class="fa fa-cogs"></i>
+															</span>
+															<input type="text" id="typeahead_example_modal_3" name="typeahead_example_modal_3" class="form-control"/>
+														</div>
+														<p class="help-block">
+															 Uses a precompiled template to customize look of suggestion.
+														</p>
+													</div>
+												</div>
+												<div class="form-group last">
+													<label class="col-sm-4 control-label">Multiple Sections with Headers</label>
+													<div class="col-sm-8">
+														<div class="input-group">
+															<span class="input-group-addon">
+															<i class="fa fa-check"></i>
+															</span>
+															<input type="text" id="typeahead_example_modal_4" name="typeahead_example_modal_4" class="form-control"/>
+														</div>
+														<p class="help-block">
+															 Two datasets that are prefetched, stored, and searched on the client. Highlighting is enabled.
+														</p>
+													</div>
+												</div>
+											</form>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END PORTLET-->
+				</div>
+			</div>
+
+			<!-- END PAGE CONTENT-->
+		</div>
+	</div>
+	<!-- END CONTENT -->
+
+</div>
+<!-- END CONTAINER -->
+
+
+</body>
+
+<!-- END BODY -->
+</html>
